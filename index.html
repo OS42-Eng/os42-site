@@ -13,7 +13,6 @@
       --bg-dark: #0f172a;
       --text-light: #e5e7eb;
       --muted: #9ca3af;
-      --navbar: rgba(15, 23, 42, 0.8);
     }
 
     * {
@@ -30,44 +29,6 @@
 
     html {
       scroll-behavior: smooth;
-    }
-
-    .navbar {
-      width: 100%;
-      background-color: var(--navbar);
-      backdrop-filter: blur(12px);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-    .navbar h1 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .navbar .nav-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .navbar .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: var(--primary);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      transition: background-color 0.2s ease;
-    }
-
-    .navbar .nav-links a:hover {
-      background-color: rgba(255, 255, 255, 0.1);
     }
 
     .hero {
@@ -198,24 +159,10 @@
       .hero-overlay {
         padding: 1.5rem;
       }
-
-      .navbar {
-        flex-direction: column;
-        gap: 0.75rem;
-      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <header class="navbar">
-    <h1>OS42</h1>
-    <div class="nav-links">
-      <a href="#contact">Contact</a>
-      <a href="https://preview--ra-inventory-31.lovable.app/" target="_blank" rel="noopener noreferrer">Product</a>
-    </div>
-  </header>
 
   <!-- Hero -->
   <section class="hero">
