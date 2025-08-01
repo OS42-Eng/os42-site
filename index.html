@@ -8,7 +8,10 @@
   <style>
     :root {
       --primary: #111827;
-      --accent: #3b82f6;
+      --accent: #2563eb;
+      --background: #f9fafb;
+      --text: #1f2937;
+      --muted: #6b7280;
       --white: #ffffff;
     }
 
@@ -20,13 +23,17 @@
 
     html, body {
       font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-      color: var(--primary);
+      background-color: var(--background);
+      color: var(--text);
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     .hero {
       height: 100vh;
-      background: url('img.png') center center / cover no-repeat;
+      background: url('img.png') center/cover no-repeat;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -40,28 +47,27 @@
       content: '';
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.6); /* slightly transparent white */
-      backdrop-filter: blur(1px); /* less blur here */
+      width: 100%; height: 100%;
+      background: rgba(17, 24, 39, 0.5);
+      backdrop-filter: blur(3px);
       z-index: 0;
     }
 
-    .hero h1, .hero p, .hero a {
+    .hero h1, .hero p, .hero button {
       position: relative;
       z-index: 1;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       font-weight: 800;
-      color: var(--primary);
+      color: var(--white);
       margin-bottom: 1rem;
     }
 
     .hero p {
-      font-size: 1.25rem;
-      color: #4b5563;
+      font-size: 1.5rem;
+      color: #d1d5db;
       margin-bottom: 2rem;
     }
 
@@ -69,94 +75,96 @@
       padding: 0.75rem 2rem;
       font-size: 1rem;
       background-color: var(--accent);
-      color: white;
+      color: var(--white);
       font-weight: 600;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .cta-button:hover {
-      background-color: #2563eb;
+      background-color: #1d4ed8;
     }
 
     .contact-section {
       padding: 5rem 2rem;
+      background-color: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f3f4f6;
     }
 
     form {
       width: 100%;
-      max-width: 500px;
-      background: rgba(255, 255, 255, 0.9);
+      max-width: 550px;
+      background: #ffffff;
       border: 1px solid #e5e7eb;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     }
 
     form h2 {
       text-align: center;
-      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
       color: var(--primary);
     }
 
     input, textarea {
       width: 100%;
-      padding: 0.9rem;
-      margin-bottom: 1rem;
+      padding: 1rem;
+      margin-bottom: 1.25rem;
       border: 1px solid #d1d5db;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 1rem;
-      background-color: white;
-      color: #111827;
+      background-color: #f9fafb;
+      color: var(--text);
     }
 
     input::placeholder,
     textarea::placeholder {
-      color: #6b7280;
+      color: var(--muted);
     }
 
-    button {
+    button[type="submit"] {
       background-color: var(--accent);
       color: white;
-      padding: 0.9rem;
+      padding: 1rem;
       border: none;
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    button:hover {
-      background-color: #2563eb;
+    button[type="submit"]:hover {
+      background-color: #1d4ed8;
     }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background-color: #e5e7eb;
-      color: #374151;
-      font-size: 0.9rem;
+      background-color: #f3f4f6;
+      color: #4b5563;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
 
       .hero p {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
 
       form {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
       }
     }
   </style>
@@ -166,7 +174,7 @@
   <section class="hero">
     <h1>OS42</h1>
     <p>Business OS for Future</p>
-    <a href="#contact"><button class="cta-button">Join the Waitlist</button></a>
+    <button class="cta-button" onclick="scrollToContact()">Join the Waitlist</button>
   </section>
 
   <section id="contact" class="contact-section">
@@ -182,6 +190,13 @@
   <footer>
     &copy; 2025 OS42 – All rights reserved.
   </footer>
+
+  <script>
+    function scrollToContact() {
+      const contact = document.getElementById('contact');
+      contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
 
 </body>
 </html>
